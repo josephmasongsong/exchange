@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="x12wQZb8q5-50azm4x8ApMGiBljsT9NLrVFkLG38rkI" />
+    <title>{{ page_title }}</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="hamburgers.css" rel="stylesheet">
+    <link href="theme.scss" rel="stylesheet">
+    <link href="animate.css" rel="stylesheet">
+    <link href="exchange.scss" rel="stylesheet">
+    {{ content_for_header }}
+    <script src="https://use.fontawesome.com/79e9af75d6.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAgFdpMPjzULcgipaZlMRVYq1b3-XAx4YU&amp;libraries=weather,geometry,visualization,places,drawing' type='text/javascript'></script>
+    <script type="text/javascript">
+      NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+    </script>
+  </head>
+  <body class="{{ page.page_class_name }} page-{{ request.template | replace: '_', '-' }} js">
+    <div id="wrapper">
+
+        {% if page.is_homepage? == true %}
+        {% include "nav_blue" %}
+        {% else %}
+        {% include "nav_light" %}
+        {% endif %}
+
+        {{ content_for_notifications }}
+
+        {% if page.is_homepage? == true %}
+        <div class="container-fluid p-0">
+         {% include "home_carousel" %}
+        </div>
+        {% else %}
+
+          {% if page.type_slug == 'blog_post' or page.type_slug == 'feedback' or page.slug == 'newsletter_archive' or page.slug == 'meeting_minutes' %}
+            {% include "blog_header" %}
+          {% elsif page.type_slug == 'event' %}
+            {% include "event_header" %}
+          {% elsif page.parent.slug == 'working_groups' %}
+          {% else %}
+            {% unless page.type_slug == 'feedback' %}
+              {% include "exchange_hero" %}
+            {% endunless %}
+          {% endif %}
+
+        {% endif %}
+
+
+
+          {% if request.is_sidebar? %}
+          {% include "columns_1" %}
+          {% else %}
+          {% include "columns_1" %}
+          {% endif %}
+
+
+      <footer class='footer bg-blue'>
+
+        {{ content_for_footer }}
+        {% include "footer_content" %}
+
+
+      </footer>
+      
+    </div>
+
+    <script src="bootstrap.js"></script>
+    <script src="wow.min.js"></script>
+    <script src="main.js"></script>
+    {% if page.type_slug == 'event' %}
+    <script src="showmap.js"></script>
+    {% endif %}
+  </body>
+</html>
+

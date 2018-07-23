@@ -1,0 +1,31 @@
+.bg-blue, .bg-green, .bg-yellow, .bg-secondary {
+	color: #fff !important;
+	a {
+		color: #fff !important;
+	}
+	.form-control {
+		border: 0;
+	}
+}
+
+.bg-white {
+	a {
+		color:  $primary-blue !important;
+	}
+}
+
+.bg-blue {
+	background-color: $primary-blue !important;
+}
+
+.bg-green {
+	background-color: $primary-green !important;
+}
+
+.bg-yellow {
+	background-color: $primary-yellow !important;
+}
+
+.bg-secondary {
+	background-color: $secondary-color !important;
+}

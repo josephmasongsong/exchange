@@ -1,0 +1,21 @@
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0;
+    a {
+    	color: #fff;
+    	&:hover {
+			color: $primary-green;
+			text-decoration: none;
+    	}
+    }
+	img {
+		width: 180px;
+		vertical-align: middle;
+		margin-right: 3rem;
+		float: left;
+	}			
+	.col-sm-3 {
+		text-align: right;
+	}
+}

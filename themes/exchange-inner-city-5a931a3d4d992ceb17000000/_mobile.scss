@@ -1,0 +1,186 @@
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+
+    /*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+
+        body {
+            padding-top: 80px;
+        }
+        .navbar-light {
+            min-height: inherit;
+        }
+        .navbar-light img {
+            width: 140px;
+            height: inherit;
+            margin-left: 1rem;
+        }
+        .exchange-hero {
+            min-height: 355px;
+        }
+        .exchange-hero .hero-caption, .hero-short .hero-caption {
+            padding: 0 1rem;
+        }
+        .exchange-hero .hero-caption h1, .hero-short .hero-caption h1 {
+            font-size: 1.75rem;
+        }
+        .mission-value-statement h3 {
+            font-size: 1.5rem;
+        }
+        .mission-value-statement p {
+            font-size: 1.125rem;
+        }
+        .mission-value-statement i {
+            font-size: 4rem;
+        }
+        .callout {
+            padding: 3rem 0;     
+            p, ul li {
+                font-size: 1rem;
+            }       
+        }
+        .callout h2 {
+            font-size: 1.5rem;
+        }
+        .callout .excerpt-container {
+            right: 2rem;
+            left: 2rem;
+        }
+        .square {
+            min-height: 20rem;
+        }
+        .callout-wide .callout-wide-container, .callout-wide .callout-narrow-container {
+            padding: 0 1.5rem;
+        }
+        .carousel, .carousel-inner, .carousel .item.active, .carousel .item {
+            height: 355px;
+        }
+        .carousel-caption {
+            left: 1rem;
+            right: 1rem;
+            bottom: inherit;
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+        .navbar-light .navbar-right {
+            padding-right: 0;
+        }
+        .news-events-container {
+            padding: 1.75rem 0 3.5rem;
+        }
+        .news-events-container .news-item {
+            margin-right: 1rem;
+            margin-left: 1rem;
+            min-height: 20rem;
+            margin-top: 1.75rem;
+        }
+        .news-events-container .news-item .news-excerpt-container h3 {
+            font-size: 1.25rem;
+        }
+        .news-events-container .news-item .news-excerpt-container p {
+            font-size: 0.875rem;
+            margin-bottom: .5rem;
+        }
+        .news-events-container h1 {
+            text-align: center;
+            font-size: 1.875rem;
+        }
+        .exchange-hero .hero-caption h3, .hero-short .hero-caption h3 {
+            font-size: 1.125rem;
+        }
+        .where-when {
+            h3 {
+                margin-top: 0;
+                font-size: 1.25rem;
+            }
+        }
+        .working-group-sidebar .box {
+            margin-top: 3.5rem;
+        }
+        footer {
+            .col-sm-9, .col-sm-3 {
+                text-align: center;
+            }
+            img {
+                float: none;
+                margin-bottom: .75rem;
+                margin-right: 0;
+            }
+        }
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+
+    }
+
+.hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+    background-color: $secondary-color !important;
+    height: 2px;
+    border-radius: 0px;
+}
+
+.navbar-toggle {
+    position: absolute;
+    float: none;
+    right: 1rem;
+    top: 1.75rem;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    max-height: none;
+}

@@ -1,0 +1,16 @@
+{% if page.features_count > 0 %}
+
+{% if page.features.size > 0 %}
+
+{% for feature in page.features %}
+<section class='exchange-hero' style='background-image: url({{ feature.image_url }});'>
+  <div class='overlay-blue-light'></div>
+  <div class='hero-caption'>
+    <h1 class='wow fadeInUp'>{{ feature.headline }}</h1>
+  </div>
+</section>
+{% endfor %}
+
+{% endif %}
+
+{% endif %}

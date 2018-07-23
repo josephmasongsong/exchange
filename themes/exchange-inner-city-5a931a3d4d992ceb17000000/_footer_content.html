@@ -1,0 +1,46 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-9'>
+      <img src='https://d3n8a8pro7vhmx.cloudfront.net/themes/5a931a3d4d992ceb17000000/attachments/original/1519624576/exchange-logo-white-transparent.png?1519624576'>
+      <ul class='list-inline'>
+        <li class='list-inline-item'>
+          <a href='/research'>Research</a>
+        </li>
+        <li class='list-inline-item'>⋅</li>
+        <li class='list-inline-item'>
+          <a href='/meeting_minutes'>Meeting Minutes</a>
+        </li>
+        {% if request.logged_in? %}
+        <li class='list-inline-item'>⋅</li>
+        <li class='list-inline-item'>
+          <a href='/newsletter_archive'>Newsletter Archive</a>          
+        </li>
+        {% endif %}
+        <li class='list-inline-item'>⋅</li>
+        <li class='list-inline-item'>
+          <a href='/contact'>Contact</a>
+        </li>
+      </ul>
+      <p class='small'>© Exchange Inner City 2018. All Rights Reserved.</p>
+    </div>
+    <div class='col-sm-3'>
+      <ul class='list-inline mb-0'>
+        <li class='list-inline-item'>
+          <a href='https://www.facebook.com//exchangeced/' target="_blank">
+          <i class='fa fa-facebook fa-2x fa-fw'></i>
+          </a>
+        </li>
+        <li class='list-inline-item'>
+          <a href='https://twitter.com/ExchangeCED'>
+          <i class='fa fa-twitter fa-2x fa-fw'></i>
+          </a>
+        </li>
+<!--         <li class='list-inline-item'>
+          <a href='#'>
+          <i class='fa fa-instagram fa-2x fa-fw'></i>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</div>

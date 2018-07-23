@@ -1,0 +1,28 @@
+
+<div class="container news-events-container">
+  <div class="row">
+    <h1>{{ page.headline }}</h1>
+  </div>
+  <div class="row">
+    {% for post in page.blog.most_recent_blog_posts %}
+    <div class='col-sm-4'>
+      <a href='{{ post.url }}' class='news-item-link'>
+        <div class='news-item' style='background-image: url({% if post.features.size > 0 %}{% for feature in post.features limit: 1 %}{{ feature.image_url }}{% endfor %}{% endif %});'>
+          <div class='news-excerpt-container'>
+            <div class="{% cycle 'overlay-green', 'overlay-yellow' %}"></div>
+            <p>{{ post.published_at | date: '%B %d, %Y' }}</p>
+            <h3>{{ post.headline }}</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+
+
+
+{% subpage "newsletter" with "newsletter" %}
+

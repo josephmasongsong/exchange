@@ -1,0 +1,43 @@
+<div class='container-fluid p-0'>
+  <div class='row no-gutters'>
+    <div class='col-sm-12 callout callout-wide'>
+      <div class='callout-narrow-container'>
+        {{ page.event.content }}
+        <div data-lat='{{ page.event.venue_address.lat }}' data-lon='{{ page.event.venue_address.lng }}' id='addressMap'></div>
+
+        <div class='row where-when'>
+          <div class='col-sm-4 col-sm-offset-2 col-xs-6'>
+            <h3>
+              <i class='fa fa-map-marker' style='margin-right: 10px;'></i>
+              Where
+            </h3>
+            <p>
+              {{ page.event.venue_name }}
+              <br/>
+              {% for line in page.event.venue_address.multi_line %}
+                {{ line | replace: 'Canada', '' }}<br/>
+              {% endfor %}
+            </p>
+          </div>
+          <div class='col-sm-4 col-xs-6'>
+            <h3>
+              <i class='fa fa-calendar' style='margin-right: 10px;'></i>
+              When
+            </h3>
+            <p>
+              {{ page.event.local_start_at | date: '%A, %B %d %Y' }}
+              <br>
+              From {{ page.event.local_start_at | event_just_time }} to {{ page.event.local_end_at | event_just_time }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% subpage 'news' with 'latest_blog_posts'%}
+
+</div>
+
+{% subpage "newsletter" with "newsletter" %}

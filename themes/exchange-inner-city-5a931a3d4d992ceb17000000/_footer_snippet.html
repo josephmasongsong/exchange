@@ -1,0 +1,8 @@
+<li class='list-inline-item'>⋅</li>
+<li class='list-inline-item'>
+  {% if request.logged_in? %}
+  <a href='{{ request.current_signup.logout_url }}'>Sign Out</a>
+  {% else %}
+  <a href='/login'>Sign In</a>
+  {% endif %}
+</li>

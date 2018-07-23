@@ -1,0 +1,8 @@
+{% for page in tag.most_recent_published_pages limit: 3 %}
+<div class='item {% if forloop.first == true %}active{% endif %}' style='{% if page.features.size > 0 %}{% for feature in page.features limit: 1 %}background-image: url({{ feature.image_url }}){% endfor %}{% endif %};'>
+  <div class='overlay go-to' data-href="{{ page.url }}"></div>
+  <div class='carousel-caption'>
+    <h1 class='wow fadeInUp'>{% if page.features.size > 0 %}{% for feature in page.features limit: 1 %}{{ feature.headline }}{% endif %}</h1>
+  </div>
+</div>
+{% endfor %}

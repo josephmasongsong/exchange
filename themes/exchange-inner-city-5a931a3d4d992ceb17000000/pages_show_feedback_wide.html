@@ -1,0 +1,92 @@
+
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+    <div class="col-sm-12 callout callout-wide">
+      <div class="callout-narrow-container">
+        {% if page.feedback.content.size > 0 %}
+          {{ page.feedback.content }}
+        {% endif %}        
+
+
+      {% if request.sorta_logged_in? %}
+
+      <h4>Hi {{ request.current_signup.name_or_email }}.</h4>
+
+      {% if request.logged_in? == false %}
+      <div class="padtop">
+        If you're not {{ request.current_signup.name_or_email }},
+        <a href="{{ request.current_signup.logout_url }}">click here</a>.
+      </div>
+      {% endif %}
+
+      {% else %}
+
+      {% endif %}
+
+      {% form_for feedback %}
+
+      <div class="form-errors">{% error_messages_for feedback %}</div>
+
+      {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
+      <div class="row">
+        <div class="col-md-6"><div class="form-group">{% text_field "first_name", class:"text form-control", placeholder:"First Name" %}
+        <span class="help-block">* Required</span>
+        </div></div>
+        <div class="col-md-6"><div class="form-group">{% text_field "last_name", class:"text form-control", placeholder:"Last Name" %}
+        <span class="help-block">* Required</span>
+        </div></div>
+      </div>
+      {% endif %}
+
+      {% if request.sorta_logged_in? == false or request.current_signup.has_mobile? == false %}
+      <div class="row">
+        <div class="col-md-12"><div class="form-group">{% email_field "email", class:"text form-control", placeholder:"Email" %}
+        <span class="help-block">* Required</span>
+        </div></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6"><div class="checkbox"><label for="feedback_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label></div>
+        </div>
+        {% if site.ask_for_mobiles? %}
+        <div class="col-md-6"><div class="checkbox"><label for="feedback_mobile_opt_in">{% check_box "mobile_opt_in", class:"checkbox" %} Send me text messages</label></div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if page.feedback.is_content? %}
+      <div class="row">
+        <div class="col-md-12"><div class="form-group">{% text_area "content", class:"textarea form-control autogrow", placeholder:"Your message" %}
+        <span class="help-block">* Required</span>
+        </div>
+        </div>
+      </div>
+      {% endif %}
+
+
+
+      {% if page.feedback.is_volunteers? and site.ask_for_volunteers? %}
+      {% if request.logged_in? == false or request.current_signup.is_volunteer == false %}
+      <div class="row">
+        <div class="col-md-12"><div class="checkbox"><label for="feedback_is_volunteer">{% check_box "is_volunteer", class:"checkbox" %} I want to volunteer</label></div>
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      {% submit_tag page.feedback.submit_button_name, class:"submit-button btn btn-green" %}
+      <div class="form-submit"></div>
+
+      {% endform_for %}
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

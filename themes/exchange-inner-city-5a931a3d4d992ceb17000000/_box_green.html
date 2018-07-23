@@ -1,0 +1,11 @@
+{% for page in tag.most_recent_published_pages limit: 1 %}
+  <div class='col-sm-6 callout square bg-green'>
+    <div class='excerpt-container'>
+      <h2 class='wow fadeInUp'>{{ page.name }}</h2>
+      <p class='wow fadeInUp'>
+        <a class='prev-next' href='{{ page.url }}'>Learn More</a>
+      </p>
+    </div>
+  </div>
+{% endfor %}
+

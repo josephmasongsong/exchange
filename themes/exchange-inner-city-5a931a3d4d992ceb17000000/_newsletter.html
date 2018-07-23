@@ -1,0 +1,15 @@
+<section class='callout-wide text-center bg-secondary callout'>
+	<div class='callout-wide-container'>
+		<h2>{{ page.headline }}</h2>
+		{% form_for signup %}   
+	    {% hidden_field_tag "page_id", page.id %} 
+			<div class="form-errors">{% error_messages_for signup %}</div>
+			<div class='form-group'>
+				<input required="" class="newsletter-form form-control" id="signup_email" name="signup[email]" placeholder="Enter your email..." type="email" aria-invalid="true" onkeyup="checkInput(this.value)">
+			</div>
+	    <button type="submit" class="btn btn-green" name="commit">
+	    	Sign Up
+	    </button>
+		{% endform_for %}
+	</div>
+</section>

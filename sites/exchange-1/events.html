@@ -1,0 +1,28 @@
+<div class="container news-events-container">
+  <div class="row">
+    <h1>Events</h1>
+  </div>
+  <div class="row">
+    {% for event in site.upcoming_event_pages offset: 0 %}
+    <div class='col-sm-4'>
+      <a href='{{ event.url }}' class='news-item-link'>
+        <div class='news-item' style='background-image: url({% if event.features.size > 0 %}{% for feature in event.features limit: 1 %}{{ feature.image_url }}{% endfor %}{% endif %});'>
+          <div class='news-excerpt-container'>
+            <div class="{% cycle 'overlay-green', 'overlay-yellow' %}"></div>
+            <h3>{{ event.headline }}</h3>
+            <p style='margin-bottom: 1rem;'><i class='fa fa-calendar'></i>{{ event.event.local_start_at | date: '%A, %B %d, %Y' }}</p>
+            <p style='margin-bottom: 1rem;'><i class='fa fa-map-marker'></i>{{ event.event.venue_address.address1 }}, {{ event.event.venue_address.city_and_state | replace: ', Canada', '' }}</p>
+
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+
+
+
+{% subpage "newsletter" with "newsletter" %}

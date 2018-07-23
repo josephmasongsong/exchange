@@ -1,0 +1,18 @@
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+  {% for post in page.blog.most_recent_blog_posts limit:2 offset:0 %}  
+
+  <div class='col-sm-6 callout square {% cycle "bg-green", "bg-yellow" %}'>
+    <div class='excerpt-container'>
+      <p class='post-date wow fadeInUp'>{{ post.published_at | date: '%B %d, %Y' }}</p>
+      <h2 class='wow fadeInUp'>{{ post.headline }}</h2>
+      <p class='wow fadeInUp'>
+        <a class='prev-next' href='{{ post.url }}'>Learn More</a>
+      </p>
+    </div>
+  </div>
+
+	{% endfor %}
+
+  </div>
+</div>

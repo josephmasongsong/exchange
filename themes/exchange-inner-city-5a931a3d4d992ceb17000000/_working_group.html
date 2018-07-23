@@ -1,0 +1,36 @@
+<div class='hero-slim {% if page.features.size == 0 %}bg-blue{% endif %}' style='{% if page.features.size > 0 %}{% for feature in page.features limit: 1 %}background-image: url({{ feature.image_url }}){% endfor %}{% endif %};'>
+  {% if page.features.size > 0 %}
+    <div class="overlay"></div>
+  {% endif %}
+  <div class='hero-caption'>
+    <h1 class='wow fadeInUp'>{{ page.headline }}</h1>
+  </div>
+</div>
+
+
+<div class='container-fluid callout'>
+  <div class='row no-gutters'>
+    <div class="col-sm-11 col-sm-offset-1">
+      <div class="row">
+        
+        <div class='col-sm-7'>
+          <div class='working-group-info'>
+            {% for feature in page.features limit: 1 %}
+              <img src="{{ feature.image_url }}">
+            {% endfor %}
+            {{ page.basic.content }}
+            <!-- <span class="divider" style="height: 100%; position: absolute; top: 0;right:-3.25rem; border-right: 1px solid #244C5A;"> -->
+            <!-- </span> -->
+          </div>
+        </div>    
+        <div class='col-sm-4 working-group-sidebar'>
+          <div class="box bg-green"">
+          <h3>Want to attend?</h3>
+          {{ page.excerpt }}        
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

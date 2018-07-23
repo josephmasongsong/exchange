@@ -1,0 +1,29 @@
+<section class='callout callout-wide text-center' style="padding-bottom: 3.5rem;">
+  <div class='container'>
+    <div class='row no-gutters'>
+      {% for child in page.children %}
+      <div class='col-lg-4 text-center'>
+        <div class='mission-value-statement'>
+          <div class='mv-icon'>
+            {{ child.excerpt }}
+          </div>
+          <h3>{{ child.headline }}</h3>
+          <p class='lead mb-0'>{{ child.basic.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+  
+    {% tag "mission_values_green" with "box_green" %}
+    {% tag "mission_values_yellow" with "box_yellow" %}
+
+  </div>
+</div>
+
+{% subpage "newsletter" with "newsletter" %}

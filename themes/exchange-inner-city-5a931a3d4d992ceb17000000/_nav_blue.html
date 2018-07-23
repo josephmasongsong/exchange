@@ -1,0 +1,37 @@
+<nav class='navbar navbar-dark navbar-fixed-top'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button class="hamburger hamburger--squeeze navbar-toggle collapsed" type="button" data-target="#menu-collapse" data-toggle='collapse' type='button'>
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>  
+      <a href='/'>
+        <img src="https://d3n8a8pro7vhmx.cloudfront.net/exchange/pages/11/attachments/original/1519621793/exchange-logo-dark.png?1519621793" alt="Exchange Inner City" />
+      </a>
+    </div>
+    <div class='collapse navbar-collapse' id='menu-collapse'>
+      <ul class='nav navbar-nav navbar-right'>
+        {% for child in site.root_nav_pages %}
+        {% if child.leaf? or child.nav_children.size == 0 %}
+        <li {% if child.is_or_is_ancestor_of_current_page? %}class="active"{% endif %}>
+          <a href="{{ child.url }}">{{ child.name }}</a>
+        </li>
+        {% else %}
+        <li class="{% if child.is_or_is_ancestor_of_current_page? %}active{% endif %} dropdown">
+          <a href="{{ child.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ child.name }} </a>
+          <ul class="dropdown-menu  exchange-dropdown-menu" role="menu">
+            {% if site.show_parent_in_nav_dropdown? %}
+              <li><a href="{{ child.url }}">{{ child.name }}</a></li>
+            {% endif %}
+            {% for child2 in child.nav_children %}
+              <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

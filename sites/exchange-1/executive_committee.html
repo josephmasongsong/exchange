@@ -1,0 +1,37 @@
+<section class='text-center callout-wide callout'>
+  <div class='container'>
+    <div class='row'>
+      {% for child in page.children %}
+      <div class='col-sm-4'>
+        <div class='member-item wow fadeIn'>
+          
+          {% if child.features.size > 0 %}
+            {% for feature in child.features %}
+              <div class='member-photo' style='background-image: url({{ feature.image_url }});'></div>
+            {% endfor %} 
+          {% else %}
+            <div class='member-photo' style='background-image: url(https://d3n8a8pro7vhmx.cloudfront.net/themes/5a931a3d4d992ceb17000000/attachments/original/1519629542/default-avatar.png?1519629542);'></div>
+          {% endif %}          
+
+          <h5>{{ child.headline }}</h5>
+          <p class='font-weight-light mb-0'>{{ child.excerpt }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+    
+    <div class='col-sm-12 callout callout-wide bg-green'>
+      <div class='callout-wide-container'>
+        {{ page.basic.content }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% subpage "newsletter" with "newsletter" %}
+
