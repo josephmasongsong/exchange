@@ -2,6 +2,7 @@
 
 <div class='col-sm-6 callout square bg-blue'>
   <div class='excerpt-container'>
+	<p class='wow fadeInUp'>{{ page.published_at | date: '%B %d, %Y' }}</p>
     <h2 class='wow fadeInUp'>{% for feature in page.features limit: 1 %}{{ feature.headline }}{% endfor %}</h2>
     <p class='wow fadeInUp'>
       <a class='prev-next' href='{{ page.url }}'>Learn More</a>

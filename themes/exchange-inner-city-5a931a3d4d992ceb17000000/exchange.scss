@@ -138,6 +138,15 @@ h1,h2,h3,h4,h5,h6 {
 			// padding-bottom: 3.5rem;
 			font-size: 1.5rem;
 		}
+		li.phone:before {
+			content: "\f095";
+			margin-left: -1rem;
+			font-family: FontAwesome;
+			display: table-cell;
+			padding-right: 1rem;
+			// padding-bottom: 3.5rem;
+			font-size: 1.5rem;
+		}
 	}
 }
 

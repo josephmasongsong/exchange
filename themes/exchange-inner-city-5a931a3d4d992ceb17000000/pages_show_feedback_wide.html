@@ -1,11 +1,13 @@
 
-<div class="container-fluid p-0">
-  <div class="row no-gutters">
-    <div class="col-sm-12 callout callout-wide">
-      <div class="callout-narrow-container">
+<div class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
+  <div class="row ">
+    <div class="col-sm-8 ">
+
+        {% comment %}
         {% if page.feedback.content.size > 0 %}
           {{ page.feedback.content }}
-        {% endif %}        
+        {% endif %}
+        {% endcomment %}        
 
 
       {% if request.sorta_logged_in? %}
@@ -81,6 +83,12 @@
       {% endform_for %}
 
 
+      
+    </div>
+    <div class="col-sm-4 working-group-sidebar" >
+      <div class="box bg-green">
+        <h3 syle="margin-bottom: 1.5rem;">We can be reached at</h3>
+        {{ page.feedback.content }}
       </div>
     </div>
   </div>
